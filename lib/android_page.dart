@@ -8,11 +8,24 @@ class AndroidPage extends StatefulWidget {
 }
 
 class AndroidState extends State<AndroidPage> {
+
+  bool loveFlutter = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Notre design sous Android"),
+      ),
+      body: Column(
+        children: [
+          ElevatedButton(
+              onPressed: () {
+
+              },
+              child: Text((loveFlutter) ? "I Love Flutter" : "Vive Elden Ring")
+          )
+        ],
       ),
     );
   }

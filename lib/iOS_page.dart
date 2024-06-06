@@ -9,14 +9,31 @@ class iOSPage extends StatefulWidget{
 
 class iOSState extends State<iOSPage> {
 
+  bool loveIt = true;
+
   @override
   Widget build(BuildContext context) {
-    return const CupertinoPageScaffold(
+    return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         middle: Text("Design sous iOS"),
         leading: Icon(Icons.source),
+        backgroundColor: Colors.red,
       ),
-        child: Text("Je suis Cupertino")
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          // mainAxisSize: MainAxisSize.max,
+          children: [
+            CupertinoButton(
+              color: Colors.red,
+                child: Text((loveIt) ? "I Love Flutter " : "Vive Elden Ring"),
+                onPressed: () {
+                  setState(() {
+                    loveIt = !loveIt;
+                  });
+                }
+            )
+          ],
+        )
     );
   }
 }
